@@ -26,7 +26,7 @@ public class UserController {
     @GetMapping("{userId}")
     public User getUserPaymentDetails(@PathVariable String userId){
         UserDetailsQuery userDetailsQuery
-                = new UserDetailsQuery();
+                =  UserDetailsQuery.builder().userId(userId).build();
         User user =
                 queryGateway.query(userDetailsQuery,
                         ResponseTypes.instanceOf(User.class)).join();
