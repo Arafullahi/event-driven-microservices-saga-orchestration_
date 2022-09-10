@@ -38,7 +38,7 @@ public class OrderProcessingSaga {
                 event.getOrderId());
 
         GetUserPaymentDetailsQuery getUserPaymentDetailsQuery
-                = new GetUserPaymentDetailsQuery("hdhdhd");
+                = new GetUserPaymentDetailsQuery();
 
         User user = null;
 
