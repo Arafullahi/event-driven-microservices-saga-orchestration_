@@ -76,6 +76,7 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+					<imageName>user-service</imageName>
 				</configuration>
 			</plugin>
 		</plugins>
