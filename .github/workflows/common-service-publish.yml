@@ -3,11 +3,11 @@ name: publish CommonService
 on:
   push:
     branches: [ "Development","main" ]
-    paths: [CommonService/**]
+    #paths: [common-service/**]
   pull_request:
     branches: [ "main" ]
-    paths: 
-    - CommonService/**
+    #paths: 
+    #- common-service/**
 
 jobs:
   build:
@@ -29,10 +29,10 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml -Dmaven.test.skip=true
-      working-directory: CommonService
+      working-directory: common-service
 
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml -Dmaven.test.skip=true
-      working-directory: CommonService
+      working-directory: common-service
       env:
         GITHUB_TOKEN: ${{ github.token }}
