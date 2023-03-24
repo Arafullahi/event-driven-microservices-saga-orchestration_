@@ -5,7 +5,7 @@ name: user service image build
 
 on:
   push:
-    branches: ["Development","master"]
+    branches: ["Development","main"]
    # paths: 
     #- user-service\*
 
