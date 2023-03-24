@@ -17,7 +17,7 @@
         </repository>
         <repository>
           <id>github</id>
-          <url>https://maven.pkg.github.com/Arafullahi/vent-driven-microservices-saga-orchestration_</url>
+          <url>https://maven.pkg.github.com/Arafullahi/event-driven-microservices-saga-orchestration_</url>
           <snapshots>
             <enabled>true</enabled>
           </snapshots>
