@@ -36,7 +36,7 @@ jobs:
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        password: ${{ secrets.CLASSIC_REPO_SECCRET }}
         
     - name: Build the hello-docker Docker image
       run: docker push ghcr.io/deselikem/user-service:latest
