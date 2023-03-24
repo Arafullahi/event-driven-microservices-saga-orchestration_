@@ -32,7 +32,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.axonframework/axon-spring-boot-starter -->
+		<!--  https://mvnrepository.com/artifact/org.axonframework/axon-spring-boot-starter -->
 		<dependency>
 			<groupId>org.axonframework</groupId>
 			<artifactId>axon-spring-boot-starter</artifactId>
