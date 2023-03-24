@@ -3,11 +3,11 @@ name: Docker Image CI
 on:
   push:
     branches: [ "Development","main" ]
-    paths: [CommonService/**]
+   # paths: [CommonService/**]
   pull_request:
     branches: [ "main" ]
-    paths: 
-    - CommonService/**
+   # paths: 
+    #- CommonService/**
 
 jobs:
   build:
