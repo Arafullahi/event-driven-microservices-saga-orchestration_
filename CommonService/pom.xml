@@ -61,7 +61,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub OWNER Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/Arafullahi/gode-core-1</url>
+			<url>https://maven.pkg.github.com/Arafullahi/vent-driven-microservices-saga-orchestration_</url>
 		</repository>
 	</distributionManagement>
 
