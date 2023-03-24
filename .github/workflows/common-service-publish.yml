@@ -32,7 +32,7 @@ jobs:
       working-directory: common-service
 
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml -Dmaven.test.skip=true
+      run: mvn -X deploy -s $GITHUB_WORKSPACE/settings.xml -Dmaven.test.skip=true
       working-directory: common-service
       env:
         GITHUB_TOKEN: ${{ github.token }}
