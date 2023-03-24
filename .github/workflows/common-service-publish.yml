@@ -28,9 +28,11 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name: Build with Maven
-      run: /CommonService/mvn -B package --file pom.xml
+      run: mvn -B package --file pom.xml
+      working-directory: CommonService
 
     - name: Publish to GitHub Packages Apache Maven
-      run: /CommonService/mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+      working-directory: CommonService
       env:
         GITHUB_TOKEN: ${{ github.token }}
