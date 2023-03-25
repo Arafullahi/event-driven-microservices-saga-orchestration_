@@ -84,7 +84,7 @@
 	<repositories>
 		<repository>
 		  <id>github</id>
-		  <url>https://maven.pkg.github.com/OWNER/REPOSITORY</url>
+		  <url>https://maven.pkg.github.com/Arafullahi/event-driven-microservices-saga-orchestration_</url>
 		  <snapshots>
 		    <enabled>true</enabled>
 		  </snapshots>
