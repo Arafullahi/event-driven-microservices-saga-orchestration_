@@ -52,7 +52,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.dailycodebuffer</groupId>
-			<artifactId>CommonService</artifactId>
+			<artifactId>common-service</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
