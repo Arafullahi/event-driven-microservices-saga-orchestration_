@@ -81,5 +81,11 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub OWNER Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/Arafullahi/event-driven-microservices-saga-orchestration_</url>
+		</repository>
+	</distributionManagement>
 </project>

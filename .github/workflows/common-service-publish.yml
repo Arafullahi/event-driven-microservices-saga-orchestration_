@@ -3,11 +3,11 @@ name: publish CommonService
 on:
   push:
     branches: [ "Development","main" ]
-    #paths: [common-service/**]
+    paths: [common-service/**]
   pull_request:
     branches: [ "main" ]
-    #paths: 
-    #- common-service/**
+    paths: 
+    - common-service/**
 
 jobs:
   build:
