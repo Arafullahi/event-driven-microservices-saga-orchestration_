@@ -28,7 +28,7 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name: Build-iamge with Maven
-      run: mvn -X  --settings ../settings.xml -Pgithub spring-boot:build-image 
+      run: mvn -X  -s $GITHUB_WORKSPACE/settings.xml -Pgithub spring-boot:build-image 
       working-directory: user-service
       
     - name: Docker login and push
