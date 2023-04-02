@@ -9,7 +9,17 @@ services:
       - 8761
     ports:
       - 8761:8761
+  apigateway:
+    container_name: apigateway
+    build: 
+      context: ./
+      dockerfile: ./apigateway/Dockerfile
+    expose:
+      - 9191
+    ports:
+      - 9191:9191
   user-service:
+    container_name: userservice
     build: 
       context: ./
       dockerfile: ./user-service/Dockerfile

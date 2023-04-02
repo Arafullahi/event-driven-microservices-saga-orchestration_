@@ -4,9 +4,9 @@ WORKDIR /app
 
 
 COPY  ./settings.xml settings.xml
-COPY eurekaServer/pom.xml ./
+COPY apigateway/pom.xml ./
 
-COPY eurekaServer/src ./src
+COPY apigateway/src ./src
 COPY ./entrypoint.sh ./
 RUN apt-get update && apt-get install dos2unix && dos2unix /app/entrypoint.sh && chmod +x /app/entrypoint.sh
 
