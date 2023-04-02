@@ -29,8 +29,6 @@
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 			<version>4.0.0</version>
 		</dependency>
-
-		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -70,6 +68,7 @@
 		</dependency> -->
 
 	</dependencies>
+  
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -88,7 +87,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					
+					<version>2.5.5</version>
 					<imageName>user-service</imageName>
 					
 				</configuration>
@@ -97,4 +96,11 @@
 		</plugins>
 	</build>
 
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub OWNER Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/Arafullahi/event-driven-microservices-saga-orchestration_</url>
+		</repository>
+	</distributionManagement>
 </project>
