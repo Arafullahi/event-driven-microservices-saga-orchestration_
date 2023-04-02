@@ -1,12 +1,12 @@
-
-FROM maven:3.6.3-jdk-11-slim
+FROM maven:3-openjdk-11-slim as build
 
 WORKDIR /app
+
+
 COPY  ./settings.xml settings.xml
-COPY user-service/pom.xml ./
+COPY eurekaServer/pom.xml ./
 
-COPY user-service/src ./src
-
+COPY eurekaServer/src ./src
 COPY ./entrypoint.sh ./
 RUN apt-get update && apt-get install dos2unix && dos2unix /app/entrypoint.sh && chmod +x /app/entrypoint.sh
 

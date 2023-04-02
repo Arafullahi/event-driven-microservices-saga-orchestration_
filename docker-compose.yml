@@ -1,0 +1,111 @@
+version: "3.9"
+services:
+  eureka-server:
+    container_name: eurekasever
+    build: 
+      context: ./
+      dockerfile: ./eurekaServer/Dockerfile
+    expose:
+      - 8761
+    ports:
+      - 8761:8761
+  user-service:
+    build: 
+      context: ./
+      dockerfile: ./user-service/Dockerfile
+    expose:
+      - 9092
+    ports:
+      - 9092:9092
+    links:
+      - mongo_db
+      - axonserver
+      - eureka-server
+  mongo_db:
+    image: "mongo:4.4.3"
+    container_name: mongo_db
+    expose:
+      - 27017
+    ports:
+      - 27017:27017
+  axonserver:
+    image: axoniq/axonserver
+    hostname: axonserver
+    container_name: axonserver
+    volumes:
+      - axonserver-data1:/data
+      - axonserver-events1:/eventdata
+      - axonserver-config1:/config:ro
+    expose:
+      - 8024
+    ports:
+      - '8124:8124'
+      - '8024:8024'
+      - '8224:8224'
+  shipment-service:
+    build: 
+      context: ./
+      dockerfile: ./ShipmentService/Dockerfile
+    expose:
+      - 9094
+    ports:
+      - 9094:9094
+    links:
+      - mongo_db
+      - axonserver
+      - eureka-server
+  product-service:
+    build: 
+      context: ./
+      dockerfile: ./ProductService/Dockerfile
+    expose:
+      - 8081
+    ports:
+      - 8081:8081
+    links:
+      - mongo_db
+      - axonserver
+      - eureka-server
+  payment-service:
+    build: 
+      context: ./
+      dockerfile: ./PaymentService/Dockerfile
+    expose:
+      - 9093
+    ports:
+      - 9093:9093
+    links:
+      - mongo_db
+      - axonserver
+      - eureka-server
+  order-service:
+    build: 
+      context: ./
+      dockerfile: ./OrderService/Dockerfile
+    expose:
+      - 9091
+    ports:
+      - 9091:9091
+    links:
+      - mongo_db
+      - axonserver
+      - eureka-server
+volumes:
+  axonserver-data1:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${PWD}/volume/data
+      o: bind
+  axonserver-events1:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${PWD}/volume/events
+      o: bind
+  axonserver-config1:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${PWD}/volume/config
+      o: bind
