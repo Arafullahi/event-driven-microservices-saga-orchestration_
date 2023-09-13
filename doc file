@@ -1,0 +1,5 @@
+satrting the zipkin
+     docker run -d -p 9411:9411 openzipkin/zipkin
+
+starting axon server
+     docker run -d --name my-axon-server -p 8024:8024 -p 8124:8124 axoniq/axonserver

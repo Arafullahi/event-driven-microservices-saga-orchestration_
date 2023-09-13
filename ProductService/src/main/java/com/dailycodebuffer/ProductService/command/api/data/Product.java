@@ -1,9 +1,10 @@
 package com.dailycodebuffer.ProductService.command.api.data;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+
 import java.math.BigDecimal;
 
 @Data

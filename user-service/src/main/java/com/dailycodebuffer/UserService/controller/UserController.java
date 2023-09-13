@@ -34,6 +34,12 @@ public class UserController {
         return user;
     }
 
+    @GetMapping
+    public String getUserPaymentDetails(){
+
+        return "welcome";
+    }
+
     @PostMapping
     public String createUser(@RequestBody User user){
         CreateUserCommand createUserCommand = CreateUserCommand.builder()
